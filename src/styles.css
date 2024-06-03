@@ -24,14 +24,37 @@ section {
   list-style-type: none;
 }
 
-.image-details {
+.animal-details > * {
   display: none;
+}
+
+.image-info {
+    position: relative;
 }
 
 .animal-image {
     width: 100%;
     height: 100%;
+    overflow: hidden;
+}
+
+.animal-image img {
+    height: 100%;
+    width: 100%;
     object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.image-info:hover .animal-image img{
+    filter: grayscale();
+    transform: scale(1.1);
+  }
+
+  .image-info:hover .animal-details {
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 @media only screen and (min-width: 1024px) {
@@ -39,26 +62,24 @@ section {
         width: 90%;
         margin: 0 auto;
         height: 60%;
-       
     }
 
-    .image-info {
-        position: relative;
-    }
-
-    .image-details {
+    .animal-details {
         display: flex;
         flex-direction: column;
         justify-content: end;
         position: absolute;
-        inset: 0;
-        background-color: rgba(0, 0, 0, 0.4);
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.1);
         color: #fff; 
-        padding: 0 0 2rem 2.5rem;
+        padding: 1rem 0 2rem 1.5rem;
         font-family: 'Poppins', sans-serif;
     }
 
-    .image-details > * {
+    .animal-details > * {
+        display: block;
         padding: 0;
         margin: 0;
     }
@@ -66,7 +87,7 @@ section {
     .animal-name, 
     .animal-species {
          font-weight: bold;
-         font-size: 1.5rem;
+         font-size: 1.3rem;
          line-height: 38px;
     }
 
@@ -78,7 +99,7 @@ section {
     }
 
     #know-more-btn {
-        display: none;
+       display: none;
        background-color: transparent;
        color: rgb(0, 225, 255);
        border: 1px hidden;
@@ -89,8 +110,14 @@ section {
        font-size: 1rem;
     }
 
-    .image-details:hover #know-more-btn {
+    .image-info:hover #know-more-btn {
        display: flex;
+    }
+
+    .image-info:hover .animal-details {
+        top: 0;
+        backdrop-filter: blur(5px);
+        background-color: rgba(0, 0, 0, 0.7);
     }
 
     .animal-location,
@@ -103,4 +130,14 @@ section {
     #gallery-container {
         width: 80%;
     }
+
+    .animal-details {
+        padding-left: 2rem;
+    }
+
+    .animal-name, 
+    .animal-species {
+        font-size: 1.5rem;
+    }
 }
+

@@ -37,10 +37,14 @@ const displayGalleryAnimalInfo = (animalInfo) => {
     const animalInfoContainer = document.createElement('li');
     animalInfoContainer.classList = 'image-info'
 
+    const animalImgContainer = document.createElement('div');
+    animalImgContainer.classList = ' animal-image';
+
     const animalImage = document.createElement('img');
-    animalImage.classList = ' animal-image';
     animalImage.src = animalInfo.image;
     animalImage.alt = animalInfo.name;
+
+    animalImgContainer.appendChild(animalImage);
 
     const animalName = document.createElement('p');
     animalName.className = 'animal-name';
@@ -65,12 +69,12 @@ const displayGalleryAnimalInfo = (animalInfo) => {
 
     knowMoreButton.append(btnParagaraph, btnIcon);
 
-    const imageDetails = document.createElement('div');
-    imageDetails.classList = 'image-details';
+    const animalDetails = document.createElement('div');
+    animalDetails.classList = 'animal-details';
 
-    imageDetails.append(animalSpecies, animalName, animalLocation, knowMoreButton)
+    animalDetails.append(animalSpecies, animalName, animalLocation, knowMoreButton)
 
-    animalInfoContainer.append(animalImage, imageDetails);
+    animalInfoContainer.append(animalImgContainer, animalDetails);
 
     animalContainerFragment.appendChild(animalInfoContainer);
 };
