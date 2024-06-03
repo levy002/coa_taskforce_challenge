@@ -127,6 +127,7 @@ galleryContainer.addEventListener('click', (e) => {
   fullSizeAnimalImageContainer.addEventListener('click', (e) => {
     if (e.target.matches('.close-full-size-view')) {
       hideFullScreen();
+      fullSizeAnimalImageContainer.innerHTML = '';
     }
   });
 
