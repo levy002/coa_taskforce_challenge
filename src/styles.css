@@ -109,9 +109,7 @@ body {
         flex-direction: column;
         justify-content: end;
         position: absolute;
-        bottom: 0;
-        right: 0;
-        left: 0;
+        inset: 0;
         background-color: rgba(0, 0, 0, 0.1);
         color: #fff; 
         padding: 1rem 0 2rem 1.5rem;
@@ -151,12 +149,15 @@ body {
        font-size: 1rem;
     }
 
+    .know-more-btn {
+        cursor: pointer;
+    }
+
     .image-info:hover .know-more-btn {
        display: flex;
     }
 
     .image-info:hover .animal-details {
-        top: 0;
         backdrop-filter: blur(5px);
         background-color: rgba(0, 0, 0, 0.7);
     }

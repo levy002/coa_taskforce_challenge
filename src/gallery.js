@@ -37,6 +37,7 @@ const animalContainerFragment = document.createDocumentFragment();
 const displayGalleryAnimalInfo = (animalInfo) => {
   const animalInfoContainer = document.createElement("li");
   animalInfoContainer.classList = "image-info";
+  animalInfoContainer.dataset.id = animalInfo.id;
 
   const animalImgContainer = document.createElement("div");
   animalImgContainer.classList = " animal-image";
@@ -60,7 +61,6 @@ const displayGalleryAnimalInfo = (animalInfo) => {
   animalLocation.textContent = animalInfo.origin;
 
   const knowMoreButton = document.createElement("button");
-  knowMoreButton.id = animalInfo.id;
   knowMoreButton.classList = "know-more-btn";
 
   const btnParagaraph = document.createElement("p");
@@ -72,7 +72,6 @@ const displayGalleryAnimalInfo = (animalInfo) => {
   knowMoreButton.append(btnParagaraph, btnIcon);
 
   const animalDetails = document.createElement("div");
-  animalDetails.id = animalInfo.id;
   animalDetails.classList = "animal-details";
 
   animalDetails.append(
@@ -117,11 +116,12 @@ function hideFullScreen() {
 }
 
 galleryContainer.addEventListener('click', (e) => {
-    if (e.target.matches('.know-more-btn,.animal-details')) {
-      const animalId = parseInt(e.target.id);
-      const animal = animals.find(animal => animal.id === animalId);
-      showAnimalInFullScreen(animal);
-    } 
+    const animalCard = e.target.closest('.image-info');
+  if (animalCard) {
+    const animalId = parseInt(animalCard.dataset.id);
+    const animal = animals.find(animal => animal.id === animalId);
+    showAnimalInFullScreen(animal);
+  }
   });
 
   fullSizeAnimalImageContainer.addEventListener('click', (e) => {
