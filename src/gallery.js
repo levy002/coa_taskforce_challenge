@@ -1,6 +1,6 @@
 const galleryContainer = document.getElementById('gallery-container');
 
-const imagesInfo = [
+const animals = [
     {
         id: 1,
         name: 'FOX',
@@ -31,22 +31,31 @@ const imagesInfo = [
     }
 ];
 
-const imageContainerFragment = document.createDocumentFragment();
+const animalContainerFragment = document.createDocumentFragment();
 
-const displayGalleryImagesInfo = (imageInfo) => {
-    const imageInfoContainer = document.createElement('li');
-    imageInfoContainer.style.backgroundImage = `url(${imageInfo.image})`;
+const displayGalleryAnimalInfo = (animalInfo) => {
+    const animalInfoContainer = document.createElement('li');
+    animalInfoContainer.classList = 'image-info'
 
-    const name = document.createElement('p');
-    name.textContent = imageInfo.name;
+    const animalImage = document.createElement('img');
+    animalImage.classList = ' animal-image';
+    animalImage.src = animalInfo.image;
+    animalImage.alt = animalInfo.name;
+
+    const animalName = document.createElement('p');
+    animalName.className = 'animal-name';
+    animalName.textContent = animalInfo.name;
     
-    const species = document.createElement('p');
-    species.textContent = imageInfo.species;
+    const animalSpecies = document.createElement('p');
+    animalSpecies.classList = 'animal-species';
+    animalSpecies.textContent = animalInfo.species;
 
-    const origin = document.createElement('p');
-    origin.textContent = imageInfo.origin;
+    const animalLocation = document.createElement('p');
+    animalLocation.classList = 'animal-location';
+    animalLocation.textContent = animalInfo.origin;
 
     const knowMoreButton = document.createElement('button');
+    knowMoreButton.id = 'know-more-btn';
 
     const btnParagaraph = document.createElement('p');
     btnParagaraph.textContent = 'Know more';
@@ -56,16 +65,20 @@ const displayGalleryImagesInfo = (imageInfo) => {
 
     knowMoreButton.append(btnParagaraph, btnIcon);
 
-    imageInfoContainer.append(species, name, origin, knowMoreButton);
+    const imageDetails = document.createElement('div');
+    imageDetails.classList = 'image-details';
 
-    imageContainerFragment.appendChild(imageInfoContainer);
+    imageDetails.append(animalSpecies, animalName, animalLocation, knowMoreButton)
+
+    animalInfoContainer.append(animalImage, imageDetails);
+
+    animalContainerFragment.appendChild(animalInfoContainer);
 };
 
-imagesInfo.forEach(imageInfo => {
-    displayGalleryImagesInfo(imageInfo)
+animals.forEach(animal => {
+    displayGalleryAnimalInfo(animal)
 });
 
 window.onload = function (){
-    galleryContainer.appendChild(imageContainerFragment);
+    galleryContainer.appendChild(animalContainerFragment);
 };
-
