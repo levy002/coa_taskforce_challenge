@@ -92,7 +92,7 @@ animals.forEach((animal) => {
 
 
 
-function showAnimalInFullScreen(animal) {
+const showAnimalInFullScreen = (animal) => {
     const fullSizeFragment = document.createDocumentFragment();
 
     const closeButton = document.createElement('i');
@@ -111,7 +111,7 @@ function showAnimalInFullScreen(animal) {
     fullSizeAnimalImageContainer.classList.add('full-size-image-view');
 }
 
-function hideFullScreen() {
+const hideFullScreen = () => {
     fullSizeAnimalImageContainer.classList.remove('full-size-image-view');
 }
 
