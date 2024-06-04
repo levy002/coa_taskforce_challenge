@@ -61,6 +61,22 @@ An interactive, responsive photo gallery application that allows users to naviga
     
 </div>
 
+<!-- Photo Gallery -->
+
+## 🚀 Responsive Photo Gallery
+
+<div style="display: flex; flex-wrap: wrap;">
+    <img src="https://github.com/levy002/coa_taskforce_challenge/assets/87197412/ebfcc550-08c2-4fe5-b729-834324cad4aa" alt="iPhone-12-PRO" height="200px" style="margin-right: 10px;">
+    <img src="https://github.com/levy002/coa_taskforce_challenge/assets/87197412/c1cb7d67-8ab9-424d-831d-e436c7a18c39" alt="iPad-PRO-11" height="200px">
+</div>
+
+<div style="display: flex; flex-wrap: wrap;">
+    <img src="https://github.com/levy002/coa_taskforce_challenge/assets/87197412/6b61d057-f229-41c2-b1a8-041d9f1fa62e" alt="Macbook-Air" height="200px" style="margin-right: 10px;">
+    <img src="https://github.com/levy002/coa_taskforce_challenge/assets/87197412/22e7b745-700c-4272-bb6f-67515515728f" alt="Macbook-Air-2" height="200px">
+</div>
+
+
+
 <!-- LIVE DEMO -->
 
 ## 🚀 Live link <a name="live-demo"></a>
